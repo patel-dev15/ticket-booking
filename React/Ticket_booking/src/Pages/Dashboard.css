@@ -1,0 +1,306 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.dashboard {
+  min-height: 100vh;
+  background: #f4f6fb;
+  padding: 35px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.dashboard-header h2 {
+  color: #222b45;
+  font-size: 27px;
+  margin-bottom: 8px;
+}
+
+.dashboard-header p {
+  color: #8490a5;
+  font-size: 14px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.create-btn,
+.logout-btn {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.create-btn {
+  background: #635bff;
+  color: white;
+}
+
+.create-btn:hover {
+  background: #4940df;
+}
+
+.logout-btn {
+  background: #ffe8e8;
+  color: #df4444;
+}
+
+/* Summary Cards */
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.summary-card {
+  background: white;
+  padding: 23px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+  border-left: 4px solid;
+}
+
+.summary-card h4 {
+  color: #667085;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.summary-card h2 {
+  font-size: 30px;
+  color: #222b45;
+  margin-bottom: 8px;
+}
+
+.summary-card span {
+  font-size: 12px;
+  color: #98a2b3;
+}
+
+.total {
+  border-color: #635bff;
+}
+
+.open {
+  border-color: #f0a52b;
+}
+
+.progress {
+  border-color: #3189e8;
+}
+
+.resolved {
+  border-color: #20ae70;
+}
+
+/* Ticket List */
+
+.ticket-list {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.list-header h3 {
+  color: #222b45;
+  margin-bottom: 7px;
+}
+
+.list-header p {
+  color: #98a2b3;
+  font-size: 13px;
+}
+
+.list-header select {
+  padding: 11px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  outline: none;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+th {
+  text-align: left;
+  padding: 15px 12px;
+  background: #f8f9fc;
+  color: #667085;
+  font-size: 13px;
+}
+
+td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #edf0f5;
+  color: #344054;
+  font-size: 13px;
+}
+
+tr:hover td {
+  background: #fafaff;
+}
+
+/* Priority */
+
+.priority-badge {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.priority-badge.low {
+  background: #e5f8ed;
+  color: #199653;
+}
+
+.priority-badge.medium {
+  background: #fff4d9;
+  color: #c58b12;
+}
+
+.priority-badge.high {
+  background: #ffe5e5;
+  color: #e04444;
+}
+
+/* Status */
+
+.status-select {
+  padding: 7px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Actions */
+
+.action-buttons {
+  display: flex;
+  gap: 7px;
+}
+
+.view-btn,
+.delete-btn {
+  padding: 8px 11px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.view-btn {
+  background: #e9e8ff;
+  color: #635bff;
+}
+
+.delete-btn {
+  background: #ffe8e8;
+  color: #df4444;
+}
+
+.view-btn:hover {
+  background: #d9d7ff;
+}
+
+.delete-btn:hover {
+  background: #ffd4d4;
+}
+
+.no-data,
+.loading-text {
+  text-align: center;
+  padding: 30px;
+  color: #8490a5;
+}
+
+/* Responsive */
+
+@media(max-width: 900px) {
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 600px) {
+  .dashboard {
+    padding: 18px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-buttons {
+    width: 100%;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .list-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+.view-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.view-modal-content {
+  background: white;
+  padding: 25px;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 12px;
+}
+
+.view-modal-content p {
+  margin: 15px 0;
+}
